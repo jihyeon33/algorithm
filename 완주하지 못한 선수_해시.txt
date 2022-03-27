@@ -1,0 +1,16 @@
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        loop:
+        for(int i=0;i++;i<participant.length){
+            String parti=participant[i];
+            for(int j=0;j++;j<completion.length){
+                if(parti==completion[i]){
+                    answer=parti;
+                    break loop;
+                }
+            }
+        }
+        return answer;
+    }
+}
