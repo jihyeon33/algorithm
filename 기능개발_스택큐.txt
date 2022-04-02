@@ -3,45 +3,61 @@
 2 1
 
 5 10 1 1 20 1
+5 10 1 1 20 1
 1 3 2
 
+import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.lang.Math;
+
 //남은 작업량 배열을 반환해주는 함수
-getProgress(array){
-	for(int i;i++;){
-		progress.push(100-array[i])
+public int[] getProgress(int[] progress){
+	int [] progress2= {};
+	for(int i=0;i++;i<=progres.length){
+		progress2[i]=100-progress[i];
 	}
-	return progress
+	return progress2;
 }
 
 //남은 작업일(남은양/속도) 배열을 반환해주는 함수
-getDay(progress,speeds){
-	for(int i;){
-		day.push(progress[i]/speeds[i])
+public int[] getDay(int[] progress,int[] speeds){
+	int [] day={};
+	for(int i=0; i++; i<progress.length){
+		day[i]=(int)Math.ceil((double)progress[i]/speeds[i]);   //ceil메소드 사용하여 나눗셈 올림한 값을 대입
 	}
-	return day
+	return day;
 }
-//배포일자마다 배포되는 과제수 배열 반환 함수
-get result(day){
-	result= new que;
-	stack=new stack;
-	for(int i;i<day.length){
-		stack.push(day[i])
-		if(day[i]<day[i+1]){
-			int cnt=0
-			while(stack.isempty){
-				stack.pop()
-				cnt+=1
-				result.push(cnt)
+//배포일자마다 배포되는 과제수 큐 반환 함수
+public int[] getResult(int[] day){
+	Queue<Integer> result= new LinkedList<Integer>;
+	int[] result2={};
+	Queue<Integer> que=new Queue<Integer>;
+	que.add(day[0]);
+	for(int i=1;i++;i<day.length){
+		if(que.peek()<day[i]){
+			int cnt=0;
+			while(!que.isEmpty()){
+				que.poll();
+				cnt+=1;
 			}
+			result.add(cnt);
 		}
+		que.add(day[i]); // 큐의 첫번째 수보다 다음번 수가 작을경우 큐에 계속 추가됨.
 	}
-	return result
+	//큐 자료형을 int배열로 변환
+	while(!result.isEmpty()){
+		result2[i]=result.poll();
+	}
+	return result2;
+
 }
 
-main(){
-	que result=getResult();
-	while(result.isempty(){
-		answer[i]=result.pop();
-	}
-	
+public int[] main (int[]progresses, int[] speeds){
+	int[] answer ={};
+	int[] progress2=getProgress(progresses); //남은 작업량 배열 받기
+	int[] day= getDay(progress2,speeds); // 남은 작업일수 배열 받기
+
+	answer= getResult(day);  //배포때마다 배포되는 과제수 배열 받기	
+	return answer;
 }
