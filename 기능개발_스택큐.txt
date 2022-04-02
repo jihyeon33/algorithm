@@ -28,7 +28,7 @@ public int[] getDay(int[] progress,int[] speeds){
 	}
 	return day;
 }
-//배포일자마다 배포되는 과제수 큐 반환 함수
+//배포일자마다 배포되는 과제수 배열 반환 함수
 public int[] getResult(int[] day){
 	Queue<Integer> result= new LinkedList<Integer>;
 	int[] result2={};
