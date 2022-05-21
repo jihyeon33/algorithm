@@ -35,24 +35,18 @@ class Solution {
 }
 
 -------------------------------------------------
-String[] phone_book;
-/*
 //1.번호 길이 순대로 다시 순서정리
 Map<Integer,Integer> map1 = new HashMap();
-//폰북 첫번째 부터 길이값 넣어져있는 맵1 만들기
+//폰북 첫번째 부터 길이값 넣어져있는 맵 만들기
 for (int i=0; i++; i<phone_book.length){
 	map1.put(i,phone_book[i].length());
 }
-//맵1을 바탕으로 폰북순서 다시 정렬
-*/
-
-//1.번호 길이 순대로 다시 순서정리 (String 배열, 문자열 길이 순서로 정렬(Sorting))
-Arrays.sort(phone_book, (s1, s2) -> s1.length() - s2.length());
 
 //2.해쉬에 첫번째 값부터 매핑
+String[] phone_book;
+
 Map<Integer,String> map2 =new HashMap();
 for (int i=0; i++; i<phone_book.length){
 	map2.put(i,phone_book[i]);
 }
 //3.루프 : 해쉬첫번째 부터 마지막까지 비교
-for
