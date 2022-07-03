@@ -1,25 +1,38 @@
+import java.util.ArrayList;
+
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
+        
+        //arrayList로 형변환
         ArrayList<Integer> tmpReserve= new ArrayList<Integer>();
-        //전체수n -(lost의 개수 - reserve 에서 제거된 개수=못빌린 수 )
+        for(int i=0;i<reserve.length;i++){
+            tmpReserve.add(reserve[i]);
+        }
+        //빌릴수 있는지 체크. lost 원소 개수 만큼 반복
         for(int i=0;i<lost.length;i++){
             int tmpLost= lost[i];
-            tmpReserve=checkPosibl(tmpLost);
+            tmpReserve=checkPosibl(tmpLost, tmpReserve);
         }
+        //빌려준 개수= 첫 reserve.length-현재reserve.length
+        int rsrvCnt= reserve.length-tmpReserve.size();
+        int cnt=(lost.length)-rsrvCnt;
+        //전체수n -(lost의 개수 - reserve 에서 제거된 개수=못빌린 수 )
+        answer=n-cnt;
         return answer;
     }
-}
-public ArrayList<Integer> checkPosibl(int lost, int[] reserve){
-    for(int i=0; i<reserve.length ; i++){
-        if (lost==reserve[i]){
-            
-        }else if(lost-reserve[i]==1 || lost-reserve[i]==-1){
-            
-        }else{
-            
+    public ArrayList<Integer> checkPosibl(int lost, ArrayList<Integer> reserve){
+        for(int i=0; i<reserve.size() ; i++){
+            if (lost==reserve.get(i)){
+                reserve.remove((Integer)reserve.get(i));
+                //return reserve;
+            }else if(lost-reserve.get(i)==1 || lost-reserve.get(i)==-1){
+                reserve.remove((Integer)reserve.get(i));
+                //return reserve;
+            }else{
+                //return reserve;
+            }
         }
-        
+        return reserve;
     }
-
 }
