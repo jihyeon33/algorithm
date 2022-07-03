@@ -1,0 +1,25 @@
+class Solution {
+    public int solution(int n, int[] lost, int[] reserve) {
+        int answer = 0;
+        ArrayList<Integer> tmpReserve= new ArrayList<Integer>();
+        //전체수n -(lost의 개수 - reserve 에서 제거된 개수=못빌린 수 )
+        for(int i=0;i<lost.length;i++){
+            int tmpLost= lost[i];
+            tmpReserve=checkPosibl(tmpLost);
+        }
+        return answer;
+    }
+}
+public ArrayList<Integer> checkPosibl(int lost, int[] reserve){
+    for(int i=0; i<reserve.length ; i++){
+        if (lost==reserve[i]){
+            
+        }else if(lost-reserve[i]==1 || lost-reserve[i]==-1){
+            
+        }else{
+            
+        }
+        
+    }
+
+}
