@@ -1,0 +1,19 @@
+class Solution {
+    public int[] solution(int brown, int yellow) {
+        int[] answer = {};
+        return answer;
+    }
+    //yellow영역의 가로세로 길이 반환
+    public ArrayList<Integer> yellow(int ylw){
+        //약수 담는 리스트
+        ArrayList<Integer> divisor = new ArrayList<Integer>();
+        for(int i=1; i<=ylw ;i++){
+            if(ylw%i==0){
+                divisor.add(i);
+                divisor.add(ylw/i);
+            }
+        }
+        return divisor;
+    }
+    //brown영역의 가로세로 길이 반환
+}
