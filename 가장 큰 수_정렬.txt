@@ -1,0 +1,14 @@
+class Solution {
+    public String solution(int[] numbers) {
+        String answer = "";
+        return answer;
+    }
+    public ArrayList<Integer> split(int a){
+        ArrayList<Integer> reslt =new ArrayList<Integer>;
+        while(a>0){
+            reslt.add(a%10);
+            a=a/10;
+        }
+        return reslt;
+    }
+}
