@@ -1,10 +1,41 @@
 class Solution {
     public String solution(int[] numbers) {
         String answer = "";
+        HashMap<Integer,ArrayList<Integer>> map = new HashMap<Integer,ArrayList<Integer>>();
+        for(int i=0;i<numbers.length;i++){
+            ArrayList<Integer> splt =new ArrayList<Integer>();
+            splt= split(numbers[i]);
+            map.put(i,splt);
+        }
+        int maxkey=0;
+        int maxval=0;
+        for(int i=0;i<numbers.length;i++){
+            if(map.get(i).get(0)>maxval){
+                maxkey=i;
+                maxval=map.get(i).get(0);
+                tmpAnswr.add(map.get(i));
+            }else if(map.get(i).get(0)==maxval){
+                int index=0;
+                int index1=map.get(i).size();
+                int index2=map.get(maxkey).size();
+                if(index1<=index2){
+                    index=index1;
+                }else{
+                    index=index2;       
+                }
+                for (int j=0;j<index;j++){
+                    if(map.get(i).get(j)>map.get(maxkey).get(j)){
+                        maxkey=i;
+                        tmpAnswr.add(map.get(i));
+                    }
+                }
+            }
+        }
+        
         return answer;
     }
     public ArrayList<Integer> split(int a){
-        ArrayList<Integer> reslt =new ArrayList<Integer>;
+        ArrayList<Integer> reslt =new ArrayList<Integer>();
         while(a>0){
             reslt.add(a%10);
             a=a/10;
