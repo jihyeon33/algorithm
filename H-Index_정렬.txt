@@ -1,0 +1,21 @@
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] citations) {
+        int answer = 0;
+        Arrays.sort(citations);
+        for (int i=0;i<citations.length;i++){
+            boolean ish=isH(citations,citations[i],i);
+            if (ish==true){
+                answer=citations[i];
+            }
+        }
+        return answer;
+    }
+    public boolean isH (int[] citations, int a,int index){
+        int cnt=citations.length-(index);
+        if(a==cnt){
+            return true;
+        }
+        return false;
+    }
+}
