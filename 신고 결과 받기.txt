@@ -1,0 +1,22 @@
+class Solution {
+    public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = {};
+        return answer;
+    }
+    public HashMap<String,Integer> reportcnt (String[] id_list, String[] report){
+        HashMap<String,Integer> reported = new HashMap<String,Integer>();
+        for(int i=0;i<id_list.length;i++){
+            reported.put(id_list[i],0);
+        }
+        for (int i=0;i<report.length;i++){
+            String[] tmp=report[i].split(" ");
+            String tmpId=tmp[1];
+            for(int j=0;j<id_list.length;j++){
+                if(id_list[j].equals(tmpId)){
+                    reported.put(id_list[j],reported.get(id_list[j])+1);
+                }
+            }   
+        }
+        return reported; 
+    }
+}
