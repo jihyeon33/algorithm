@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = -1;
+        answer=reslt(numbers);
+        return answer;
+    }
+    public int reslt (int[] numbers){
+        ArrayList<Integer> compare = new ArrayList<Integer>();
+        int cnt=0;
+        for(int i=0;i<10;i++){
+            compare.add(i);
+        }
+        for(int i=0;i<compare.size();i++){
+            for(int j=0; j<numbers.length;j++){
+                if(compare.get(i)==numbers[j]){
+                    compare.remove(i);
+                }
+            }
+        }
+        for(int i=0; i<compare.size();i++){
+            cnt=cnt+compare.get(i);
+        }
+        return cnt;
+    }
+}
