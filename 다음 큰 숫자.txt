@@ -1,0 +1,51 @@
+문제.
+자연수 n이 주어졌을 때, n의 다음 큰 숫자는 다음과 같이 정의 합니다.
+
+조건 1. n의 다음 큰 숫자는 n보다 큰 자연수 입니다.
+조건 2. n의 다음 큰 숫자와 n은 2진수로 변환했을 때 1의 갯수가 같습니다.
+조건 3. n의 다음 큰 숫자는 조건 1, 2를 만족하는 수 중 가장 작은 수 입니다.
+예를 들어서 78(1001110)의 다음 큰 숫자는 83(1010011)입니다.
+
+자연수 n이 매개변수로 주어질 때, n의 다음 큰 숫자를 return 하는 solution 함수를 완성해주세요.
+
+
+답안. 
+def solution(n):
+    answer = 0
+    #이진수 리스트를 뒤집어 list 생성
+    list=[0,1,1,1,0,0,1]
+    index=0
+    cnt=0
+    for i in range(len(list)):
+        if list[i]==1:
+            index=i
+            cnt=cnt+1
+            if i== len(list)-1:
+                break
+            if list[i+1]!=1:
+                break       
+    print(index) 
+    print(cnt)
+    result=[]
+    if index+1 != cnt:  #cnt가 index+1 보다 작다면
+        for i in range(len(list)):
+            if i <=index+1:
+                if i <=cnt-2:
+                    result.append(1)
+                elif (i ==index+1):
+                    result.append(1)
+                else:  
+                    result.append(0)
+            else:
+                result.append(list[i])
+    else: ##cnt가 index+1 와 같다면
+        for i in range(len(list)):
+            if i==0:
+                result.append(0)
+            elif (i==index+1):
+                result.append(1)
+            else:
+                result.append(list[i])
+    print(result)
+    #result를 뒤집어 answer 만들기    
+    return answer
