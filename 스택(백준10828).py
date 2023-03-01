@@ -1,3 +1,5 @@
+#2023. 2. 28. 성공
+
 import sys
 
 n=int(sys.stdin.readline())
