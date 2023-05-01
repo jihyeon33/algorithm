@@ -1,0 +1,17 @@
+dp=[]
+print(dp)
+
+dp.append(0)
+dp.append(3)
+dp.append(7)
+print(dp)
+for i in range(3,101):
+    dp.append(0)
+    dp[i]+=2
+    dp[i]+=dp[i-1]
+    dp[i]+=dp[i-1]
+    dp[i]-=i-1
+    for j in range(1,i-1):
+        dp[i]+=dp[j]*dp[i-1-j]
+
+print(dp)
