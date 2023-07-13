@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/*백준 1717 집합의 표현*/
+/*백준 1717 집합의 표현*/  //출력은 정상이나, 오답.
 public class ex1717 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
