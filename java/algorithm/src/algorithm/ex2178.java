@@ -1,7 +1,7 @@
 package algorithm;
 import java.util.*;
 /*백준 2178번 bfs*/
-public class ex2 {
+public class ex2178 {
 	static boolean[][] visited;
 	static int[][] gp;
 	public static void main(String[] args) {

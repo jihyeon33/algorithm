@@ -1,7 +1,7 @@
 package algorithm;
 import java.util.*;
 
-public class ex1 {
+public class ex11724 {
 /*백준 11724 연결요소의 개수  dfs  성공정답*/
 	static ArrayList<Integer>[] gp;
 	static boolean[] visted;

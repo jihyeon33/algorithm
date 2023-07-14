@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 /*백준 1707번 이분그래프*/
-public class ex3 {
+public class ex1707 {
 	static int t;
 	static ArrayList<Integer>[] gp;
 	static boolean[] visited;

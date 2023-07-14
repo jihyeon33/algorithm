@@ -17,7 +17,7 @@ public class ex1717 {
 		int[] root = new int[n+1];
 		ArrayList<Integer>[] list;
 		list = new ArrayList[m+1];
-		for(int i =1; i<=n;i++) {
+		for(int i =0; i<=n;i++) {
 			root[i]=i;
 		}
 		for(int i =1; i<=m ; i++) {
@@ -42,25 +42,41 @@ public class ex1717 {
 				root = union(root, li.get(1), li.get(2));
 			}else { //if 1 이면
 				//System.out.println("find 연산을 시작합니다.");
-				boolean rslt= find(root, li.get(1),li.get(2));
+				boolean rslt= isTrue(root, li.get(1),li.get(2));
 				if (rslt ==true) {System.out.println("YES");
 				}else {System.out.println("NO");}
 			}
 		}
 	}
 	public static int[] union(int[] root, int a, int b) {
-		if(a<b) {
-			root[b]=root[a];
+		int rootA = find(root, a);
+		int rootB = find(root, b);
+		if(rootA< rootB) {
+			root[rootB]=root[rootA];
 		}else {
-			root[a]= root[b];
+			root[rootA]= root[rootB];
 		}
 		return root;
 	}
-	public static boolean find(int[] root, int a, int b) {
+	public static int find(int[] root, int x) {
+		int rt= x;
+		int n;
+		while(true) {
+			n =root[x];
+			if(n == x) {
+				rt= x;
+				break;
+			}
+			x = n;
+		}
+		return rt;
+	}
+	public static boolean isTrue(int[] root, int a, int b) {
 		boolean rslt = false;
 		if(root[a]==root[b]) {
 			rslt= true;
 		}
 		return rslt;
 	}
+	
 }
