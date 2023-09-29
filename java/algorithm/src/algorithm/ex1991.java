@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class ex1991 {
-	/*백준1991 트리 순회*/
+	/*백준1991 트리 순회  문제이해잘못, 출력에러없음*/
 	static class Node{
 		String value;
 		String left;

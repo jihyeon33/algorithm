@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-/*백준1753 최단경로*/
+/*백준1753 최단경로 출력정상, 런타임에러*/
 public class ex1753 {
 	public static int strt;
 	public static ArrayList<ArrayList<int[]>> gp = new ArrayList<>();
